@@ -24612,20 +24612,18 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(1);
-var BrandLogo_1 = __webpack_require__(15);
-var Header_1 = __webpack_require__(21);
-__webpack_require__(24);
+// import { BrandLogo } from './BrandLogo';
+// import { Header } from './Header';
+__webpack_require__(15);
+var KanbanBoard_1 = __webpack_require__(20);
 var MainPage = /** @class */ (function (_super) {
     __extends(MainPage, _super);
     function MainPage(props) {
         return _super.call(this, props) || this;
     }
     MainPage.prototype.render = function () {
-        return (React.createElement(React.Fragment, null,
-            React.createElement(Header_1.Header, null),
-            React.createElement("p", null, "This is my new react app"),
-            React.createElement("p", null, "This is my new react app"),
-            React.createElement(BrandLogo_1.BrandLogo, null)));
+        return (React.createElement("div", { className: 'main' },
+            React.createElement(KanbanBoard_1.KanbanBoard, null)));
     };
     return MainPage;
 }(React.Component));
@@ -24634,52 +24632,16 @@ exports.MainPage = MainPage;
 
 /***/ }),
 /* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(1);
-__webpack_require__(16);
-// import '../styles/BrandLogo.css';
-var BrandLogo = /** @class */ (function (_super) {
-    __extends(BrandLogo, _super);
-    function BrandLogo(props) {
-        return _super.call(this, props) || this;
-    }
-    BrandLogo.prototype.render = function () {
-        return (React.createElement("div", { className: 'brand-logo' }));
-    };
-    return BrandLogo;
-}(React.Component));
-exports.BrandLogo = BrandLogo;
-
-
-/***/ }),
-/* 16 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
+/* 16 */,
 /* 17 */,
 /* 18 */,
 /* 19 */,
-/* 20 */,
-/* 21 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24699,28 +24661,101 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(1);
-__webpack_require__(22);
-var Header = /** @class */ (function (_super) {
-    __extends(Header, _super);
-    function Header(props) {
-        return _super.call(this, props) || this;
+__webpack_require__(21);
+var KanbanColumn_1 = __webpack_require__(23);
+var columns = [
+    {
+        name: 'Winnie',
+        cards: [{ text: 'N', columnId: 1 }, { text: 'N', columnId: 1 }]
+    },
+    {
+        name: 'Bob',
+        cards: [{ text: 'N', columnId: 1 }, { text: 'N', columnId: 1 }]
+    },
+    {
+        name: 'Thomas',
+        cards: [{ text: 'N', columnId: 1 }, { text: 'N', columnId: 1 }]
+    },
+    {
+        name: 'Georg',
+        cards: [{ text: 'N', columnId: 1 }, { text: 'N', columnId: 1 }]
     }
-    Header.prototype.render = function () {
-        return (React.createElement("div", { className: 'header' }, "You Shall Not Pass :P"));
+];
+var KanbanBoard = /** @class */ (function (_super) {
+    __extends(KanbanBoard, _super);
+    function KanbanBoard(props) {
+        var _this = _super.call(this, props) || this;
+        _this.state = {
+            columns: columns
+        };
+        return _this;
+    }
+    KanbanBoard.prototype.render = function () {
+        return (React.createElement("div", { className: 'kanban-board' }, this.renderColumns(this.state.columns)));
     };
-    return Header;
+    KanbanBoard.prototype.renderColumns = function (columns) {
+        var renderColumns = [];
+        for (var _i = 0, renderColumns_1 = renderColumns; _i < renderColumns_1.length; _i++) {
+            var column = renderColumns_1[_i];
+            renderColumns.push(React.createElement(KanbanColumn_1.KanbanColumn, { name: column.text, cards: column.cards }));
+        }
+        return renderColumns;
+    };
+    KanbanBoard.prototype.addColumn = function () {
+    };
+    return KanbanBoard;
 }(React.Component));
-exports.Header = Header;
+exports.KanbanBoard = KanbanBoard;
 
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 23 */,
+/* 22 */,
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(1);
+__webpack_require__(24);
+var KanbanColumn = /** @class */ (function (_super) {
+    __extends(KanbanColumn, _super);
+    function KanbanColumn(props) {
+        return _super.call(this, props) || this;
+    }
+    KanbanColumn.prototype.render = function () {
+        return (React.createElement("div", { className: 'kanban-column' },
+            this.props.name,
+            this.props.cards));
+    };
+    KanbanColumn.prototype.addCard = function () {
+        window.prompt();
+    };
+    return KanbanColumn;
+}(React.Component));
+exports.KanbanColumn = KanbanColumn;
+
+
+/***/ }),
 /* 24 */
 /***/ (function(module, exports) {
 

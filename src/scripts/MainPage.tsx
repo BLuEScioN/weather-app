@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { BrandLogo } from './BrandLogo';
-import { Header } from './Header';
+// import { BrandLogo } from './BrandLogo';
+// import { Header } from './Header';
 import '../styles/MainPage';
+import { KanbanBoard } from './KanbanBoard';
 
 export class MainPage extends React.Component {
 
@@ -11,12 +12,9 @@ export class MainPage extends React.Component {
 
     render() {
         return (
-            <>
-                <Header />
-                <p>This is my new react app</p>
-                <p>This is my new react app</p>
-                <BrandLogo />
-            </>
+            <div className='main'>
+                <KanbanBoard/>
+            </div>
         );
     }
 }

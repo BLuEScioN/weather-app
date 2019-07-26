@@ -1,0 +1,33 @@
+.kanban-column {
+    margin-right: 25px;
+    flex-grow: 1;
+}
+
+.kanban-column-header {
+    height: 25px;
+    width: auto;
+}
+
+.Winnie {
+ background-color: #8E6E95;
+}
+
+.Bob {
+    background-color: #39A59C;
+
+}
+
+.Thomas {
+    background-color: #344759;
+
+}
+
+.George {
+    background-color: #E8741E;
+
+}
+
+.Blue {
+ background-color: blue;
+
+}
