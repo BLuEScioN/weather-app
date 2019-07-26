@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "listFiles": false,
+        "outDir": "./out",
+        "rootDir": "./",
+        "sourceMap": true,
+        "jsx": "react",
+        "allowSyntheticDefaultImports": true,
+        "noImplicitReturns": true
+
+    },
+    "excude": [
+        "out",
+        "node_modules",
+    ]
+}

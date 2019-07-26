@@ -1,4 +1,7 @@
 import * as React from 'react';
+import { BrandLogo } from './BrandLogo';
+import { Header } from './Header';
+import '../styles/MainPage';
 
 export class MainPage extends React.Component {
 
@@ -9,10 +12,11 @@ export class MainPage extends React.Component {
     render() {
         return (
             <>
+                <Header />
                 <p>This is my new react app</p>
                 <p>This is my new react app</p>
+                <BrandLogo />
             </>
         );
     }
-
 }

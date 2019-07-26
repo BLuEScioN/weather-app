@@ -1,24 +1,25 @@
 var path = require('path');
-// var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-
-parentDir = path.join(__dirname, '../');
-console.log('DERP:', __dirname);
-console.log('path.join(__dirname, \'index.js\'):', path.join(__dirname, 'index.js'));
-console.log('path.join(__dirname, \'dist\'):', path.join(__dirname, 'dist'));
-
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	entry: {
-		// 'react-app-html': path.resolve(__dirname, 'src/index.html'),
 		'react-app': path.join(__dirname, '/src/index.js')
+	},
+	output: {
+		path: path.resolve(__dirname, 'dist'),
+		filename: '[name].js'
+	},
+	resolve: {
+		extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.less']
 	},
 	module: {
 		rules: [
-				// {
-				// 	test:/\.html$/,
-				// 	use: 'file-loader?name=[name].[ext]'
-				// }, 
+				{
+					test: /\.tsx?$/,
+					use: 'ts-loader',
+					exclude: /node_modules/
+				}, 
 				{
 					test: /\.(js|jsx)$/,
 					exclude: /node_modules/,
@@ -30,30 +31,32 @@ module.exports = {
 							cacheDirectory: true
 						}
 					}
-				}, {
+				},
+				 {
 					test: /\.css$/,
-					use: 'css-loader'
-				}, {
+					use: ExtractTextPlugin.extract({
+						use: ['css-loader'],
+						fallback: 'style-loader'
+					})
+				},
+				 {
 					test: /\.less$/,
-					use: 'less-loader'
+					use: ExtractTextPlugin.extract({
+						use: ['css-loader', 'less.loader'],
+						fallback: 'style-loader'
+					})
 				},
 		]
 	}, 
-	resolve: {
-		extensions: ['*', '.js', '.jsx', '.ts', '.tsx', '.css', '.less']
-	},
-	output: {
-		path: path.resolve(__dirname, 'dist'),
-		filename: '[name].bundle.js'
-	},
 	plugins: [
+		new ExtractTextPlugin('[name].css'),
 		new CopyWebpackPlugin([{
 			from: './src/html'
 		}])
 		// new webpack.HotModuleReplacementPlugin()
 	],
 	devServer: {
-		contentBase: path.join(__dirname, 'dist/react-app.bundle.js'),
+		contentBase: path.join(__dirname, 'dist/react-app.js'),
 		compress: true,
 		port: 8080,
 		historyApiFallback: true
