@@ -24613,8 +24613,8 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(1);
 var BrandLogo_1 = __webpack_require__(15);
-var Header_1 = __webpack_require__(21);
-__webpack_require__(24);
+var Header_1 = __webpack_require__(17);
+__webpack_require__(19);
 var MainPage = /** @class */ (function (_super) {
     __extends(MainPage, _super);
     function MainPage(props) {
@@ -24670,16 +24670,12 @@ exports.BrandLogo = BrandLogo;
 
 /***/ }),
 /* 16 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+// extracted by mini-css-extract-plugin
 
 /***/ }),
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24699,7 +24695,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(1);
-__webpack_require__(22);
+__webpack_require__(18);
 var Header = /** @class */ (function (_super) {
     __extends(Header, _super);
     function Header(props) {
@@ -24714,17 +24710,16 @@ exports.Header = Header;
 
 
 /***/ }),
-/* 22 */
-/***/ (function(module, exports) {
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+// extracted by mini-css-extract-plugin
 
 /***/ }),
-/* 23 */,
-/* 24 */
-/***/ (function(module, exports) {
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+// extracted by mini-css-extract-plugin
 
 /***/ })
 /******/ ]);

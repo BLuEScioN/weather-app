@@ -1,6 +1,9 @@
 var path = require('path');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+// var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const isDevelopment = process.env.NODE_ENV === 'development'
 
 module.exports = {
 	entry: {
@@ -16,7 +19,7 @@ module.exports = {
 	module: {
 		rules: [
 				{
-					test: /\.tsx?$/,
+					test: /\.(ts|tsx)?$/,
 					use: 'ts-loader',
 					exclude: /node_modules/
 				}, 
@@ -34,22 +37,33 @@ module.exports = {
 				},
 				 {
 					test: /\.css$/,
-					use: ExtractTextPlugin.extract({
-						use: ['css-loader'],
-						fallback: 'style-loader'
-					})
+					loader: [
+						isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+						'css-loader',
+					]
 				},
-				 {
-					test: /\.less$/,
-					use: ExtractTextPlugin.extract({
-						use: ['css-loader', 'less.loader'],
-						fallback: 'style-loader'
-					})
-				},
+				{
+					test: /\.s(a|c)ss$/,
+					// exclude: /\.module.(s(a|c)ss)$/,
+					loader: [
+					  isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+					  'css-loader',
+					  {
+						loader: 'sass-loader',
+						options: {
+						  sourceMap: isDevelopment
+						}
+					  }
+					]
+				  }
 		]
 	}, 
 	plugins: [
-		new ExtractTextPlugin('[name].css'),
+		new MiniCssExtractPlugin({
+			filename: isDevelopment ? '[name].css' : '[name].[hash].css',
+      		chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'
+		}),
+		// new ExtractTextPlugin('[name].css'),
 		new CopyWebpackPlugin([{
 			from: './src/html'
 		}])
