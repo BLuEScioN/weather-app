@@ -1,0 +1,14 @@
+.brand-logo {
+  height: 40px;
+  width: 40px;
+  background-color: orange; }
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 800;
+}
+

@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev-server": "./node_modules/.bin/webpack-dev-server --config ./webpack.dev.js --mode none",
-    "dev-build": "./node_modules/.bin/webpack --config ./webpack.dev.js --mode none",
+    "dev-server": "./node_modules/.bin/webpack-dev-server --config ./webpack.dev.js --mode development --env.NODE_ENV=development --env.development",
+    "dev-build": "./node_modules/.bin/webpack --config ./webpack.dev.js --mode development --env.NODE_ENV=development --env.development",
     "prod-build": "./node_modules/.bin/webpack --config ./webpack.dev.js --mode production"
   },
   "author": "Nick Barnett <n-barnett@hotmail.com>",
