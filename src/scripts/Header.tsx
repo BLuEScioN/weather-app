@@ -9,7 +9,7 @@ export class Header extends React.Component {
     render() {
         return (
             <div className='header'>
-                You Shall Not Pass :P
+                The start of something great
             </div>
         );
     }

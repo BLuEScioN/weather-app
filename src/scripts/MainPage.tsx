@@ -14,7 +14,6 @@ export class MainPage extends React.Component {
             <>
                 <Header />
                 <p>This is my new react app</p>
-                <p>This is my new react app</p>
                 <BrandLogo />
             </>
         );

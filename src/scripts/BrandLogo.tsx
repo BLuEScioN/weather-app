@@ -1,7 +1,5 @@
 import * as React from 'react';
-import '../styles/BrandLogo.scss';
-// import '../styles/BrandLogo.css';
-
+import '../styles/BrandLogo';
 
 export class BrandLogo extends React.Component {
     constructor(props) {

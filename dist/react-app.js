@@ -97,25 +97,25 @@ eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/Header.css":
-/*!*********************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/Header.css ***!
-  \*********************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js?!./src/styles/Header.scss":
+/*!*************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js??ref--7-2!./src/styles/Header.scss ***!
+  \*************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".header {\\r\\n    display: flex;\\r\\n    justify-content: center;\\r\\n    align-items: center;\\r\\n    height: 50px;\\r\\n    font-size: 20px;\\r\\n    font-weight: 800;\\r\\n}\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/styles/Header.css?./node_modules/css-loader/dist/cjs.js");
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".header {\\n  display: flex;\\n  justify-content: center;\\n  align-items: center;\\n  height: 50px;\\n  font-size: 20px;\\n  font-weight: 800; }\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/styles/Header.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js??ref--7-2");
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/MainPage.css":
-/*!***********************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/MainPage.css ***!
-  \***********************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js?!./src/styles/MainPage.scss":
+/*!***************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js??ref--7-2!./src/styles/MainPage.scss ***!
+  \***************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/styles/MainPage.css?./node_modules/css-loader/dist/cjs.js");
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/styles/MainPage.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js??ref--7-2");
 
 /***/ }),
 
@@ -328,7 +328,7 @@ eval("\r\nvar __extends = (this && this.__extends) || (function () {\r\n    var 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __extends = (this && this.__extends) || (function () {\r\n    var extendStatics = function (d, b) {\r\n        extendStatics = Object.setPrototypeOf ||\r\n            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\r\n            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\r\n        return extendStatics(d, b);\r\n    };\r\n    return function (d, b) {\r\n        extendStatics(d, b);\r\n        function __() { this.constructor = d; }\r\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\r\n    };\r\n})();\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\n__webpack_require__(/*! ../styles/BrandLogo.scss */ \"./src/styles/BrandLogo.scss\");\r\n// import '../styles/BrandLogo.css';\r\nvar BrandLogo = /** @class */ (function (_super) {\r\n    __extends(BrandLogo, _super);\r\n    function BrandLogo(props) {\r\n        return _super.call(this, props) || this;\r\n    }\r\n    BrandLogo.prototype.render = function () {\r\n        return (React.createElement(\"div\", { className: 'brand-logo' }));\r\n    };\r\n    return BrandLogo;\r\n}(React.Component));\r\nexports.BrandLogo = BrandLogo;\r\n\n\n//# sourceURL=webpack:///./src/scripts/BrandLogo.tsx?");
+eval("\r\nvar __extends = (this && this.__extends) || (function () {\r\n    var extendStatics = function (d, b) {\r\n        extendStatics = Object.setPrototypeOf ||\r\n            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\r\n            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\r\n        return extendStatics(d, b);\r\n    };\r\n    return function (d, b) {\r\n        extendStatics(d, b);\r\n        function __() { this.constructor = d; }\r\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\r\n    };\r\n})();\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\n__webpack_require__(/*! ../styles/BrandLogo */ \"./src/styles/BrandLogo.scss\");\r\nvar BrandLogo = /** @class */ (function (_super) {\r\n    __extends(BrandLogo, _super);\r\n    function BrandLogo(props) {\r\n        return _super.call(this, props) || this;\r\n    }\r\n    BrandLogo.prototype.render = function () {\r\n        return (React.createElement(\"div\", { className: 'brand-logo' }));\r\n    };\r\n    return BrandLogo;\r\n}(React.Component));\r\nexports.BrandLogo = BrandLogo;\r\n\n\n//# sourceURL=webpack:///./src/scripts/BrandLogo.tsx?");
 
 /***/ }),
 
@@ -340,7 +340,7 @@ eval("\r\nvar __extends = (this && this.__extends) || (function () {\r\n    var 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __extends = (this && this.__extends) || (function () {\r\n    var extendStatics = function (d, b) {\r\n        extendStatics = Object.setPrototypeOf ||\r\n            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\r\n            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\r\n        return extendStatics(d, b);\r\n    };\r\n    return function (d, b) {\r\n        extendStatics(d, b);\r\n        function __() { this.constructor = d; }\r\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\r\n    };\r\n})();\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\n__webpack_require__(/*! ../styles/Header */ \"./src/styles/Header.css\");\r\nvar Header = /** @class */ (function (_super) {\r\n    __extends(Header, _super);\r\n    function Header(props) {\r\n        return _super.call(this, props) || this;\r\n    }\r\n    Header.prototype.render = function () {\r\n        return (React.createElement(\"div\", { className: 'header' }, \"You Shall Not Pass :P\"));\r\n    };\r\n    return Header;\r\n}(React.Component));\r\nexports.Header = Header;\r\n\n\n//# sourceURL=webpack:///./src/scripts/Header.tsx?");
+eval("\r\nvar __extends = (this && this.__extends) || (function () {\r\n    var extendStatics = function (d, b) {\r\n        extendStatics = Object.setPrototypeOf ||\r\n            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\r\n            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\r\n        return extendStatics(d, b);\r\n    };\r\n    return function (d, b) {\r\n        extendStatics(d, b);\r\n        function __() { this.constructor = d; }\r\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\r\n    };\r\n})();\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\n__webpack_require__(/*! ../styles/Header */ \"./src/styles/Header.scss\");\r\nvar Header = /** @class */ (function (_super) {\r\n    __extends(Header, _super);\r\n    function Header(props) {\r\n        return _super.call(this, props) || this;\r\n    }\r\n    Header.prototype.render = function () {\r\n        return (React.createElement(\"div\", { className: 'header' }, \"The start of something great\"));\r\n    };\r\n    return Header;\r\n}(React.Component));\r\nexports.Header = Header;\r\n\n\n//# sourceURL=webpack:///./src/scripts/Header.tsx?");
 
 /***/ }),
 
@@ -352,7 +352,7 @@ eval("\r\nvar __extends = (this && this.__extends) || (function () {\r\n    var 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __extends = (this && this.__extends) || (function () {\r\n    var extendStatics = function (d, b) {\r\n        extendStatics = Object.setPrototypeOf ||\r\n            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\r\n            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\r\n        return extendStatics(d, b);\r\n    };\r\n    return function (d, b) {\r\n        extendStatics(d, b);\r\n        function __() { this.constructor = d; }\r\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\r\n    };\r\n})();\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nvar BrandLogo_1 = __webpack_require__(/*! ./BrandLogo */ \"./src/scripts/BrandLogo.tsx\");\r\nvar Header_1 = __webpack_require__(/*! ./Header */ \"./src/scripts/Header.tsx\");\r\n__webpack_require__(/*! ../styles/MainPage */ \"./src/styles/MainPage.css\");\r\nvar MainPage = /** @class */ (function (_super) {\r\n    __extends(MainPage, _super);\r\n    function MainPage(props) {\r\n        return _super.call(this, props) || this;\r\n    }\r\n    MainPage.prototype.render = function () {\r\n        return (React.createElement(React.Fragment, null,\r\n            React.createElement(Header_1.Header, null),\r\n            React.createElement(\"p\", null, \"This is my new react app\"),\r\n            React.createElement(\"p\", null, \"This is my new react app\"),\r\n            React.createElement(BrandLogo_1.BrandLogo, null)));\r\n    };\r\n    return MainPage;\r\n}(React.Component));\r\nexports.MainPage = MainPage;\r\n\n\n//# sourceURL=webpack:///./src/scripts/MainPage.tsx?");
+eval("\r\nvar __extends = (this && this.__extends) || (function () {\r\n    var extendStatics = function (d, b) {\r\n        extendStatics = Object.setPrototypeOf ||\r\n            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\r\n            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\r\n        return extendStatics(d, b);\r\n    };\r\n    return function (d, b) {\r\n        extendStatics(d, b);\r\n        function __() { this.constructor = d; }\r\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\r\n    };\r\n})();\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nvar BrandLogo_1 = __webpack_require__(/*! ./BrandLogo */ \"./src/scripts/BrandLogo.tsx\");\r\nvar Header_1 = __webpack_require__(/*! ./Header */ \"./src/scripts/Header.tsx\");\r\n__webpack_require__(/*! ../styles/MainPage */ \"./src/styles/MainPage.scss\");\r\nvar MainPage = /** @class */ (function (_super) {\r\n    __extends(MainPage, _super);\r\n    function MainPage(props) {\r\n        return _super.call(this, props) || this;\r\n    }\r\n    MainPage.prototype.render = function () {\r\n        return (React.createElement(React.Fragment, null,\r\n            React.createElement(Header_1.Header, null),\r\n            React.createElement(\"p\", null, \"This is my new react app\"),\r\n            React.createElement(BrandLogo_1.BrandLogo, null)));\r\n    };\r\n    return MainPage;\r\n}(React.Component));\r\nexports.MainPage = MainPage;\r\n\n\n//# sourceURL=webpack:///./src/scripts/MainPage.tsx?");
 
 /***/ }),
 
@@ -367,25 +367,25 @@ eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader/dis
 
 /***/ }),
 
-/***/ "./src/styles/Header.css":
-/*!*******************************!*\
-  !*** ./src/styles/Header.css ***!
-  \*******************************/
+/***/ "./src/styles/Header.scss":
+/*!********************************!*\
+  !*** ./src/styles/Header.scss ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./Header.css */ \"./node_modules/css-loader/dist/cjs.js!./src/styles/Header.css\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/styles/Header.css?");
+eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/lib/loader.js??ref--7-2!./Header.scss */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js?!./src/styles/Header.scss\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/styles/Header.scss?");
 
 /***/ }),
 
-/***/ "./src/styles/MainPage.css":
-/*!*********************************!*\
-  !*** ./src/styles/MainPage.css ***!
-  \*********************************/
+/***/ "./src/styles/MainPage.scss":
+/*!**********************************!*\
+  !*** ./src/styles/MainPage.scss ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./MainPage.css */ \"./node_modules/css-loader/dist/cjs.js!./src/styles/MainPage.css\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/styles/MainPage.css?");
+eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/lib/loader.js??ref--7-2!./MainPage.scss */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js?!./src/styles/MainPage.scss\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/styles/MainPage.scss?");
 
 /***/ })
 
