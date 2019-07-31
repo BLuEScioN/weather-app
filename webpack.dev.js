@@ -15,7 +15,7 @@ module.exports = env => {
 			filename: '[name].js'
 		},
 		resolve: {
-			extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.less']
+			extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.scss']
 		},
 		module: {
 			rules: [
