@@ -1,38 +1,21 @@
 import * as React from 'react';
-import '../styles/KanbanBoard.css';
+import '../styles/KanbanBoard.scss';
 import { IKanbanColumn, KanbanColumn } from './KanbanColumn';
 
-interface IKanbanBoardProps {}
+interface IKanbanBoardProps {
+    columns: IKanbanColumn[];
+}
 
 interface IKanbanBoardState {
     columns: IKanbanColumn[];
 }
-
-const columns: IKanbanColumn[] = [
-    {
-        name: 'Winnie',
-        cards: [{text: 'N', columnId: 1}, {text: 'N', columnId: 1}]
-    },
-    {
-        name: 'Bob',
-        cards: [{text: 'N', columnId: 1}, {text: 'N', columnId: 1}]
-    },
-    {
-        name: 'Thomas',
-        cards: [{text: 'N', columnId: 1}, {text: 'N', columnId: 1}]
-    },
-    {
-        name: 'George',
-        cards: [{text: 'N', columnId: 1}, {text: 'N', columnId: 1}]
-    }
-]
 
 export class KanbanBoard extends React.Component<IKanbanBoardProps, IKanbanBoardState> {
     constructor(props) {
         super(props);
 
         this.state = {
-            columns: columns
+            columns: this.props.columns
         }
     }
 

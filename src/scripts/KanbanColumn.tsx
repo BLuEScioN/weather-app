@@ -21,25 +21,22 @@ export class KanbanColumn extends React.Component<IKanbanColumnProps, IKanbanCol
     }
 
     render() {
-        let columnHeaderClasses = `kanban-column-header ${this.columnColorSelector(this.props.name)}`
+        let columnHeaderClasses=`kanban-column-header ${this.columnColorSelector(this.props.name)}`;
+
         return (
             <div className='kanban-column'>
-                <div className={columnHeaderClasses}>
+                <div className={`flex-center-container ${columnHeaderClasses}`}>
                     {this.props.name}
                 </div>
-                {this.renderCards(this.props.cards)}
+                <div className='card-container'>
+                    {this.renderCards(this.props.cards)}
+                </div>
             </div>
         );
     }
 
     renderCards(cards: IKanbanCard[]): JSX.Element[] {
-        let renderedCards = [];
-
-        for (let card of cards) {
-            renderedCards.push(<KanbanCard text={card.text} columnId={card.columnId}/>);
-        }
-
-        return renderedCards;
+        return cards.map((card) => <KanbanCard text={card.text} columnId={card.columnId}/>);
     }
 
     addCard() {

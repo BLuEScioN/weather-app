@@ -1,4 +1,5 @@
 import * as React from 'react';
+import '../styles/KanbanCard';
 
 export interface IKanbanCard {
     text: string;
@@ -28,7 +29,9 @@ export class KanbanCard extends React.Component<IKanbanCardProps, IKanbanCardSta
     render() {
         return (
             <div className='kanban-card'>
-                {this.state.text}
+                <div className='vertical-align-container'>
+                    {this.state.text}
+                </div>
             </div>
         );
     }

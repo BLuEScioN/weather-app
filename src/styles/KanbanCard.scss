@@ -1,0 +1,12 @@
+.kanban-card {
+    height: 75px;
+    border: 2px solid grey;
+    margin: 2px 0px;
+    padding: 5px 5px;
+    display: flex;
+
+    .vertical-align-container {
+        align-content: center;
+        align-items: center;
+    }
+}

@@ -1,6 +1,19 @@
 .kanban-column {
     margin-right: 25px;
-    flex-grow: 1;
+    flex: 1 1;
+    // display: flex;
+    // display: grid;
+    // grid-template-columns: repeat(4, minmax(56px, 80px));;
+
+
+    .flex-center-container {
+        justify-content: center;
+    }
+
+    .card-container {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .kanban-column-header {
