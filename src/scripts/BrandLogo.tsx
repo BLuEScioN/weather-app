@@ -1,5 +1,5 @@
 import * as React from 'react';
-import '../styles/BrandLogo';
+import '../styles/BrandLogo.scss';
 // import '../styles/BrandLogo.css';
 
 
