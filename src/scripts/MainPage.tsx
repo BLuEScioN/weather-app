@@ -7,19 +7,23 @@ import { IKanbanColumn } from './KanbanColumn';
 const columns: IKanbanColumn[] = [
     {
         name: 'Winnie',
-        cards: [{text: 'Hot', columnId: 1}, {text: 'Kinky', columnId: 1}]
+        cards: [{text: 'Hot', columnId: 1}, {text: 'Kinky', columnId: 1}],
+        columnId: 1
     },
     {
         name: 'Bob',
-        cards: [{text: 'Slow', columnId: 2}, {text: 'Nimble', columnId: 2}]
+        cards: [{text: 'Slow', columnId: 2}, {text: 'Nimble', columnId: 2}],
+        columnId: 2
     },
     {
         name: 'Thomas',
-        cards: [{text: 'Comedian', columnId: 3}, {text: 'Big Feet', columnId: 3}]
+        cards: [{text: 'Comedian', columnId: 3}, {text: 'Big Feet', columnId: 3}],
+        columnId: 3
     },
     {
         name: 'George',
-        cards: [{text: 'Player', columnId: 4}, {text: 'Bad Boy', columnId: 4}]
+        cards: [{text: 'Player', columnId: 4}, {text: 'Bad Boy', columnId: 4}],
+        columnId: 4
     }
 ];
 

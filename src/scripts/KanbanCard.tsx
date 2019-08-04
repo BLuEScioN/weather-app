@@ -29,9 +29,7 @@ export class KanbanCard extends React.Component<IKanbanCardProps, IKanbanCardSta
     render() {
         return (
             <div className='kanban-card'>
-                <div className='vertical-align-container'>
-                    {this.state.text}
-                </div>
+                {this.state.text}
             </div>
         );
     }

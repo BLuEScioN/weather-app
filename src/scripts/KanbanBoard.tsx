@@ -24,17 +24,19 @@ export class KanbanBoard extends React.Component<IKanbanBoardProps, IKanbanBoard
             <div className='kanban-board'>
                 {this.renderColumns(this.state.columns)}
             </div>
-        )
+        );
     }
 
     renderColumns(columns: IKanbanColumn[]): JSX.Element[] {
-        let renderColumns = [];
-
-        for (let column of columns) {
-            renderColumns.push(<KanbanColumn name={column.name} cards={column.cards}/>);
-        }
-
-        return renderColumns;
+        return columns.map((column: IKanbanColumn) => {
+            return (
+                <KanbanColumn 
+                    name={column.name} 
+                    cards={column.cards}
+                    columnId={column.columnId}
+                />
+            );
+        });
     }
 
     addColumn() {
