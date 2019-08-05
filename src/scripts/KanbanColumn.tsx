@@ -6,30 +6,25 @@ import { AddCard } from './AddCard';
 export interface IKanbanColumn {
     name: string;
     cards: IKanbanCard[];
-    columnId: number;
+    Id: number;
 }
 
 export interface IKanbanColumnProps {
     name: string;
     cards: IKanbanCard[];
     columnId: number;
+    onMoveCard: (card: IKanbanCard) => void
+    onAddCard: (columnId: number) => void
 }
 
-export interface IKanbanColumnState {
-    cards: IKanbanCard[];
-    columnId: number;
-}
+export interface IKanbanColumnState {}
+
 
 export class KanbanColumn extends React.Component<IKanbanColumnProps, IKanbanColumnState> {
     constructor(props) {
         super(props);
 
-        this.state = {
-            cards: this.props.cards,
-            columnId: this.props.columnId
-        };
-
-        this.addCard = this.addCard.bind(this);
+        // this.addCard = this.addCard.bind(this);
     }
 
     render() {
@@ -41,24 +36,24 @@ export class KanbanColumn extends React.Component<IKanbanColumnProps, IKanbanCol
                     {this.props.name}
                 </div>
                 <div className='card-container'>
-                    {this.renderCards(this.state.cards)}
+                    {this.renderCards(this.props.cards)}
                 </div>
-                <AddCard onAddCard={this.addCard}/>
+                <AddCard onAddCard={() => this.props.onAddCard(this.props.columnId)}/>
             </div>
         );
     }
 
     renderCards(cards: IKanbanCard[]): JSX.Element[] {
-        return cards.map((card) => <KanbanCard text={card.text} columnId={card.columnId}/>);
+        return cards.map((card) => <KanbanCard card={card} onMoveCard={this.props.onMoveCard}/>);
     }
 
-    addCard(e: React.ReactEventHandler<HTMLButtonElement>) {
-        const text: string = prompt('Enter card text');
-        this.setState((prevState: IKanbanColumnState) => { 
-            const newCards: IKanbanCard[] = [...prevState.cards, { text: text, columnId: prevState.columnId }];
-            return { ...prevState, cards: newCards };
-        });
-    }
+    // addCard(e: React.ReactEventHandler<HTMLButtonElement>) {
+    //     const text: string = prompt('Enter card text');
+    //     this.setState((prevState: IKanbanColumnState) => { 
+    //         const newCards: IKanbanCard[] = [...prevState.cards, { text: text, columnId: prevState.columnId }];
+    //         return { ...prevState, cards: newCards };
+    //     });
+    // }
 
     columnColorSelector(name: string): string {
         if (name === 'Winnie') {
