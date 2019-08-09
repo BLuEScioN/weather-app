@@ -14,22 +14,26 @@ const mockColumnsData: IKanbanColumn[] = [
     {
         name: 'Winnie',
         cards: [  {text: 'Hot', columnId: 0}, {text: 'Kinky', columnId: 0}],
-        Id: 0
+        id: 0,
+        headerStyle: { backgroundColor: '#8E6E95' }
     },
     {
         name: 'Bob',
         cards: [{text: 'Slow', columnId: 1}, {text: 'Nimble', columnId: 1}],
-        Id: 1
+        id: 1,
+        headerStyle: { backgroundColor: '#39A59C' }
     },
     {
         name: 'Thomas',
         cards: [{text: 'Comedian', columnId: 2}, {text: 'Big Feet', columnId: 2}],
-        Id: 2
+        id: 2,
+        headerStyle: { backgroundColor: '#344759' }
     },
     {
         name: 'George',
         cards: [{text: 'Player', columnId: 3}, {text: 'Bad Boy', columnId: 3}],
-        Id: 3
+        id: 3,
+        headerStyle: { backgroundColor: '#E8741E' }
     }
 ];
 
@@ -57,9 +61,7 @@ export class KanbanBoard extends React.Component<IKanbanBoardProps, IKanbanBoard
         return columns.map((column: IKanbanColumn) => {
             return (
                 <KanbanColumn 
-                    name={column.name} 
-                    cards={column.cards}
-                    Id={column.Id}
+                    column={column}
                     onMoveCard={this.onMoveCard}
                     onAddCard={this.onAddCard}
                 />
@@ -74,7 +76,7 @@ export class KanbanBoard extends React.Component<IKanbanBoardProps, IKanbanBoard
         let columns = [...this.state.columns];
 
         // find the index of the column that currently holds the card
-        let currentColumnIndex = columns.findIndex((column) => column.Id === movingCard.columnId);
+        let currentColumnIndex = columns.findIndex((column) => column.id === movingCard.columnId);
         // get the column that currently holds the card
         let currentColumn: IKanbanColumn = columns[currentColumnIndex];
         // remove the card from the colum
@@ -82,7 +84,7 @@ export class KanbanBoard extends React.Component<IKanbanBoardProps, IKanbanBoard
 
         // find the index of the next column that should hold the card (flimsy atm. needs refactoring)
         let nextColumnId = movingCard.columnId !== this.state.columns.length - 1 ? movingCard.columnId + 1 : 0;
-        let nextColumnIndex = columns.findIndex((column) => column.Id === nextColumnId);
+        let nextColumnIndex = columns.findIndex((column) => column.id === nextColumnId);
         // get the next column in line that should hold the card
         let nextColumn: IKanbanColumn = columns[nextColumnIndex];
         // change the columnId for the moving card
@@ -98,20 +100,18 @@ export class KanbanBoard extends React.Component<IKanbanBoardProps, IKanbanBoard
 
         if (text) { // escape input
             let columns: IKanbanColumn[] = [...this.state.columns];
-            let column: IKanbanColumn = columns.filter((column: IKanbanColumn) => column.Id === columnId)[0];
+            let column: IKanbanColumn = columns.filter((column: IKanbanColumn) => column.id === columnId)[0];
             column.cards.push({ text: text, columnId: columnId });
     
             this.setState({ columns });
         }
     }
 
-    addColumn() {
-
-    }
+    addColumn() {}
 
     private sortKanbanColumns(): void {
         let columns = [...this.state.columns];
-        columns.sort((c1, c2) => c1.Id - c2.Id);
+        columns.sort((c1, c2) => c1.id - c2.id);
         this.setState({ columns });
     }
 }

@@ -6,15 +6,14 @@ import { AddCard } from './AddCard';
 export interface IKanbanColumn {
     name: string;
     cards: IKanbanCard[];
-    Id: number;
+    id: number;
+    headerStyle?: any;
 }
 
 export interface IKanbanColumnProps {
-    name: string;
-    cards: IKanbanCard[];
-    Id: number;
-    onMoveCard: (card: IKanbanCard) => void
-    onAddCard: (columnId: number) => void
+    column: IKanbanColumn;
+    onMoveCard: (card: IKanbanCard) => void;
+    onAddCard: (columnId: number) => void;
 }
 
 export interface IKanbanColumnState {}
@@ -26,36 +25,22 @@ export class KanbanColumn extends React.Component<IKanbanColumnProps, IKanbanCol
     }
 
     render() {
-        let columnHeaderClasses=`kanban-column-header ${this.columnColorSelector(this.props.name)}`;
+        const { column } = this.props;
 
         return (
             <div className='kanban-column'>
-                <div className={`${columnHeaderClasses}`}>
-                    {this.props.name}
+                <div className={`kanban-column-header`} style={column.headerStyle}>
+                    {column.name}
                 </div>
                 <div className='card-container'>
-                    {this.renderCards(this.props.cards)}
+                    {this.renderCards(column.cards)}
                 </div>
-                <AddCard onAddCard={() => this.props.onAddCard(this.props.Id)}/>
+                <AddCard onAddCard={() => this.props.onAddCard(column.id)}/>
             </div>
         );
     }
 
     renderCards(cards: IKanbanCard[]): JSX.Element[] {
         return cards.map((card) => <KanbanCard card={card} onMoveCard={this.props.onMoveCard}/>);
-    }
-
-    columnColorSelector(name: string): string {
-        if (name === 'Winnie') {
-            return 'Winnie';
-        }if (name === 'Bob') {
-            return 'Bob';
-        }if (name === 'Thomas') {
-            return 'Thomas';
-        }if (name === 'George') {
-            return 'George';
-        } else {
-            return 'Blue';
-        }
     }
 }
