@@ -21,9 +21,7 @@ export class KanbanCard extends React.Component<IKanbanCardProps, IKanbanCardSta
     render() {
         return (
             <div className='kanban-card'>
-                {/* <div className='text'> */}
-                    {this.props.card.text}
-                {/* </div> */}
+                {this.props.card.text}
                 <div className='move-container'>
                     <div className='circle move-icon' onClick={() => this.props.onMoveCard(this.props.card)}>
                         >
@@ -32,6 +30,4 @@ export class KanbanCard extends React.Component<IKanbanCardProps, IKanbanCardSta
             </div>
         );
     }
-
-    moveColumn(id: number) {}
 }
