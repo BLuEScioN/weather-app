@@ -3,24 +3,42 @@ import '../styles/KanbanBoard.scss';
 import { IKanbanColumn, KanbanColumn } from './KanbanColumn';
 import { IKanbanCard } from './KanbanCard';
 
-interface IKanbanBoardProps {
-    columns: IKanbanColumn[];
-    // cards: IKanbanCard[];
-}
+interface IKanbanBoardProps {}
 
 interface IKanbanBoardState {
     columns: IKanbanColumn[];
-    // cards: IKanbanCard[];
 }
+
+// mock kanban board data
+const mockColumnsData: IKanbanColumn[] = [
+    {
+        name: 'Winnie',
+        cards: [  {text: 'Hot', columnId: 0}, {text: 'Kinky', columnId: 0}],
+        Id: 0
+    },
+    {
+        name: 'Bob',
+        cards: [{text: 'Slow', columnId: 1}, {text: 'Nimble', columnId: 1}],
+        Id: 1
+    },
+    {
+        name: 'Thomas',
+        cards: [{text: 'Comedian', columnId: 2}, {text: 'Big Feet', columnId: 2}],
+        Id: 2
+    },
+    {
+        name: 'George',
+        cards: [{text: 'Player', columnId: 3}, {text: 'Bad Boy', columnId: 3}],
+        Id: 3
+    }
+];
 
 export class KanbanBoard extends React.Component<IKanbanBoardProps, IKanbanBoardState> {
     constructor(props) {
         super(props);
 
-        // columns.forEach((column)this.assignCardsToColumns()
-
         this.state = {
-            columns: this.props.columns
+            columns: mockColumnsData || []
         }
 
         this.onMoveCard = this.onMoveCard.bind(this);
@@ -41,21 +59,13 @@ export class KanbanBoard extends React.Component<IKanbanBoardProps, IKanbanBoard
                 <KanbanColumn 
                     name={column.name} 
                     cards={column.cards}
-                    columnId={column.Id}
+                    Id={column.Id}
                     onMoveCard={this.onMoveCard}
                     onAddCard={this.onAddCard}
                 />
             );
         });
     }
-
-    // assignCardsToColumns(columnId: number): IKanbanCard[] {
-    //     if (!columnId) throw new Error('@assignCardsToColumns columnId cannot be null');
-
-    //     let assignedCards = [...this.state.cards];
-
-    //     return assignedCards.filter((card) => card.columnId === columnId);
-    // }
 
     /**
      * Currently only moves the card over one column
@@ -64,23 +74,21 @@ export class KanbanBoard extends React.Component<IKanbanBoardProps, IKanbanBoard
         let columns = [...this.state.columns];
 
         // find the index of the column that currently holds the card
-        let currentCardColumnIndex = columns.findIndex((column) => column.Id === movingCard.columnId);
+        let currentColumnIndex = columns.findIndex((column) => column.Id === movingCard.columnId);
         // get the column that currently holds the card
-        let currentCardColumn: IKanbanColumn = columns[currentCardColumnIndex];
+        let currentColumn: IKanbanColumn = columns[currentColumnIndex];
         // remove the card from the colum
-        currentCardColumn.cards = currentCardColumn.cards.filter((card) => card.text === movingCard.text);
+        currentColumn.cards = currentColumn.cards.filter((card: IKanbanCard) => card.text !== movingCard.text);
 
-        // find the index of the next column that should hold the card
-        let nextCardColumnIndex = columns.findIndex((column) => column.Id === (movingCard.columnId + 1));
+        // find the index of the next column that should hold the card (flimsy atm. needs refactoring)
+        let nextColumnId = movingCard.columnId !== this.state.columns.length - 1 ? movingCard.columnId + 1 : 0;
+        let nextColumnIndex = columns.findIndex((column) => column.Id === nextColumnId);
         // get the next column in line that should hold the card
-        let nextCardColumn: IKanbanColumn = columns[nextCardColumnIndex];
+        let nextColumn: IKanbanColumn = columns[nextColumnIndex];
+        // change the columnId for the moving card
+        movingCard.columnId = nextColumnId;
         // add the card to the column
-        nextCardColumn.cards.push(movingCard);
-
-        // modify the current column 
-        // columns[currentCardColumnIndex] = currentCardColumn;
-        // modify the next column
-        // columns[nextCardColumnIndex] = nextCardColumn;
+        nextColumn.cards.push(movingCard);
 
         this.setState({ columns });
     }
@@ -88,14 +96,22 @@ export class KanbanBoard extends React.Component<IKanbanBoardProps, IKanbanBoard
     onAddCard(columnId: number) {
         const text: string = prompt('Enter card text');
 
-        let columns: IKanbanColumn[] = [...this.state.columns];
-        let column: IKanbanColumn = columns.filter((column: IKanbanColumn) => column.Id === columnId)[0];
-        column.cards.push({ text: text, columnId: columnId });
-
-        this.setState({ columns });
+        if (text) { // escape input
+            let columns: IKanbanColumn[] = [...this.state.columns];
+            let column: IKanbanColumn = columns.filter((column: IKanbanColumn) => column.Id === columnId)[0];
+            column.cards.push({ text: text, columnId: columnId });
+    
+            this.setState({ columns });
+        }
     }
 
     addColumn() {
 
+    }
+
+    private sortKanbanColumns(): void {
+        let columns = [...this.state.columns];
+        columns.sort((c1, c2) => c1.Id - c2.Id);
+        this.setState({ columns });
     }
 }

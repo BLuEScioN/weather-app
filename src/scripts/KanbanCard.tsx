@@ -11,26 +11,18 @@ export interface IKanbanCardProps {
     onMoveCard: (card: IKanbanCard) => void
 }
 
-export interface IKanbanCardState {
-    text: string;
-    columnId: number;
-}
+export interface IKanbanCardState {}
 
 export class KanbanCard extends React.Component<IKanbanCardProps, IKanbanCardState> {
     constructor(props) {
         super(props);
-
-        this.state = {
-            text: this.props.card.text,
-            columnId: this.props.card.columnId
-        }
     }
 
     render() {
         return (
             <div className='kanban-card'>
                 {/* <div className='text'> */}
-                    {this.state.text}
+                    {this.props.card.text}
                 {/* </div> */}
                 <div className='move-container'>
                     <div className='circle move-icon' onClick={() => this.props.onMoveCard(this.props.card)}>
