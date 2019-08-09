@@ -1,11 +1,5 @@
 import * as React from 'react';
 import '../styles/AddCard';
-// import PlusIcon from '../assets/plus.svg';
-
-// export interface IKanbanCard {
-//     text: string;
-//     columnId: number;
-// }
 
 export interface IAddCardProps {
     onAddCard: (text) => void
