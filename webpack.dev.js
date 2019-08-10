@@ -56,7 +56,19 @@ module.exports = env => {
 								}
 							}
 						]
-					}
+					},
+					// {
+					// 	test: /\.(png|svg|jpeg|gif)$/,
+					// 	use: [
+					// 	  {
+					// 		loader: 'file-loader',
+					// 		options: {
+					// 			name: isDevelopment ? '[path][name].[ext]' : '[hash].[ext]',
+					// 			// publicPath: 'assets'
+					// 		},
+					// 	  },
+					// 	],
+					// }
 			]
 		}, 
 		plugins: [
@@ -65,9 +77,11 @@ module.exports = env => {
 				chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'
 			}),
 			new CopyWebpackPlugin([{
-				from: './src/html'
+				from: './src/html',
+				// from: './src/assets'
 			}]),
 		],
+		devtool: 'source-map',
 		devServer: {
 			contentBase: path.join(__dirname, 'dist/react-app.js'),
 			compress: true,

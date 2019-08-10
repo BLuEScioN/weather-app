@@ -1,0 +1,14 @@
+.kanban-board {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: nowrap;
+
+    .kanban-column:first-child {
+        margin-left: 0px;
+    }
+
+    .kanban-column:last-child {
+        margin-right: 0px;
+    }
+}

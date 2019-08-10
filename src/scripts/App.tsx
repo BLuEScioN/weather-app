@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { MainPage } from './MainPage.tsx';
+import { MainPage } from './MainPage';
 
 export default class App extends React.Component {
     render() {

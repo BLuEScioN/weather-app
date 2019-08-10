@@ -1,0 +1,38 @@
+.kanban-card {
+    height: 75px;
+    border: 2px solid grey;
+    margin: 2px 0px;
+    padding: 5px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 75%;
+    }
+
+    .move-container {
+        position: absolute;
+        right: 0px;
+        // justify-content: center;
+        // align-items: center;
+        width: auto;
+        
+        .circle {
+            border-radius: 50%;
+            height: 25px;
+            width: 25px;
+            background-color: grey;
+        }
+        
+        .move-icon {
+            font-size: 20px;
+            width: auto;
+            margin: 0 10px;
+        }
+    }
+}
