@@ -3,16 +3,15 @@ import '../styles/MainPage';
 import { KanbanBoard } from './KanbanBoard';
 
 export class MainPage extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <div className='main'>
-                <KanbanBoard />
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className='main'>
+        <KanbanBoard />
+      </div>
+    );
+  }
 }
