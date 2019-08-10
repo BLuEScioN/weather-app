@@ -1,6 +1,5 @@
 import * as React from 'react';
 import '../styles/MainPage';
-import { KanbanBoard } from './KanbanBoard';
 
 export class MainPage extends React.Component {
   constructor(props) {
@@ -8,10 +7,6 @@ export class MainPage extends React.Component {
   }
 
   render() {
-    return (
-      <div className='main'>
-        <KanbanBoard />
-      </div>
-    );
+    return <div className='main'>Hello World</div>;
   }
 }
