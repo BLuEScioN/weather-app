@@ -1,7 +1,46 @@
 import * as React from 'react';
 // import sunny from '../assets/weather-icons/sunny.png';
 import '../assets/weather-icons/sunny.png';
+import '../assets/weather-icons/mostly-sunny.png';
+import '../assets/weather-icons/partly-sunny.png';
+import '../assets/weather-icons/intermittent-clouds.png';
+import '../assets/weather-icons/hazy-sunshine.png';
+import '../assets/weather-icons/mostly-cloudy.png';
 import '../assets/weather-icons/cloudy.png';
+import '../assets/weather-icons/dreary-overcast.png';
+import '../assets/weather-icons/fog.png';
+import '../assets/weather-icons/showers.png';
+import '../assets/weather-icons/mostly-cloudy-with-showers.png';
+import '../assets/weather-icons/partly-sunny-with-showers.png';
+import '../assets/weather-icons/t-storms.png';
+import '../assets/weather-icons/mostly-cloudy-with-t-storms.png';
+import '../assets/weather-icons/partly-sunny-with-t-storms.png';
+import '../assets/weather-icons/rain.png';
+import '../assets/weather-icons/flurries.png';
+import '../assets/weather-icons/mostly-cloudy-with-flurries.png';
+import '../assets/weather-icons/partly-sunny-with-flurries.png';
+import '../assets/weather-icons/snow.png';
+import '../assets/weather-icons/mostly-cloudy-with-snow.png';
+import '../assets/weather-icons/ice.png';
+import '../assets/weather-icons/sleet.png';
+import '../assets/weather-icons/freezing-rain.png';
+import '../assets/weather-icons/rain-and-snow.png';
+import '../assets/weather-icons/hot.png';
+import '../assets/weather-icons/cold.png';
+import '../assets/weather-icons/windy.png';
+import '../assets/weather-icons/clear.png';
+import '../assets/weather-icons/mostly-clear.png';
+import '../assets/weather-icons/partly-cloudy.png';
+import '../assets/weather-icons/intermittent-clouds-night.png';
+import '../assets/weather-icons/hazy-moonlight.png';
+import '../assets/weather-icons/mostly-cloudy-night.png';
+import '../assets/weather-icons/partly-cloudy-with-showers-night.png';
+import '../assets/weather-icons/mostly-cloudy-with-showers-night.png';
+import '../assets/weather-icons/partly-cloudy-with-t-storms-night.png';
+
+import '../assets/weather-icons/mostly-cloudy-with-t-storms-night.png';
+import '../assets/weather-icons/mostly-cloudy-with-flurries-night.png';
+import '../assets/weather-icons/mostly-cloudy-with-snow-night.png';
 
 export const WeatherIcon = ({ id }: { id: number }) => {
   const style = {

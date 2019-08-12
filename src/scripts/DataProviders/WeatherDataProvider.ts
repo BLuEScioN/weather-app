@@ -1,6 +1,27 @@
 import axios from 'axios';
 import { apiKey as apikey } from '../../../config/accuweather-config';
 
+export interface IDailyForecast {
+  Date: string;
+  Day: IDailyForecastDayNight;
+  Night: IDailyForecastDayNight;
+  Temperatire: IDailyForecastTemperature;
+  EpochDate: number;
+}
+
+export interface IDailyForecastDayNight {
+  HasPrecipitation: boolean;
+  Icon: number;
+  IconPhrase: string;
+  PrecipitationIntensity: string;
+  PrecipitationType: string;
+}
+
+export interface IDailyForecastTemperature {
+  Maximum: { Unit: string; UnitType: number; Value: number };
+  Minimum: { Unit: string; UnitType: number; Value: number };
+}
+
 export class WeatherDataProvider {
   // TODO: Make a singleton
   /**

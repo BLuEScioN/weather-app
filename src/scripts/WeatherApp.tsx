@@ -2,10 +2,21 @@ import * as React from 'react';
 import '../styles/WeatherApp';
 import { FiveDayForecast } from './FiveDayForecast';
 import { SearchBar } from './Searchbar';
-import { WeatherDataProvider } from './DataProviders/WeatherDataProvider';
-import { WeatherIcon } from './WeatherIconsMap';
+import {
+  WeatherDataProvider,
+  IDailyForecast
+} from './DataProviders/WeatherDataProvider';
+import { WeatherIcon } from './WeatherIcon';
 
-export class WeatherApp extends React.Component {
+interface IWeatherAppProps {}
+interface IWeatherAppState {
+  fiveDayForecastData: any;
+}
+
+export class WeatherApp extends React.Component<
+  IWeatherAppProps,
+  IWeatherAppState
+> {
   private locationKey: string;
   private dataProvider: WeatherDataProvider;
 
@@ -14,6 +25,22 @@ export class WeatherApp extends React.Component {
 
     this.dataProvider = new WeatherDataProvider();
 
+    this.state = {
+      fiveDayForecastData: undefined
+    };
+  }
+
+  public render() {
+    return (
+      <div className='weather-app'>
+        <SearchBar />
+        <FiveDayForecast data={this.state.fiveDayForecastData} />
+        <WeatherIcon id={1} />
+      </div>
+    );
+  }
+
+  public componentDidMount() {
     // Get weather data. First, get location key. Then, the 5 day forecast
     this.dataProvider
       .getLocationKey('seattle')
@@ -26,16 +53,9 @@ export class WeatherApp extends React.Component {
       })
       .then((fiveDayForecast: any) => {
         console.log(fiveDayForecast);
+        const fiveDayForecastData: IDailyForecast[] =
+          fiveDayForecast.data.DailyForecasts;
+        this.setState({ fiveDayForecastData });
       });
-  }
-
-  public render() {
-    return (
-      <div className='weather-app'>
-        <SearchBar />
-        <FiveDayForecast />
-        <WeatherIcon id={1} />
-      </div>
-    );
   }
 }

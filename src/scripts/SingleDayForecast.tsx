@@ -1,7 +1,11 @@
 import * as React from 'react';
 import '../styles/SingleDayForecast';
+import { IDailyForecast } from './DataProviders/WeatherDataProvider';
+import { WeatherIcon } from './WeatherIcon';
 
-interface ISingleDayForecastProps {}
+interface ISingleDayForecastProps {
+  data: IDailyForecast;
+}
 
 interface ISingleDayForecastState {}
 
@@ -16,7 +20,8 @@ export class SingleDayForecast extends React.Component<
   render() {
     return (
       <div className='single-day-forecast'>
-        <div>Hello</div>
+        <div>{this.props.data.Day.IconPhrase}</div>
+        <WeatherIcon id={this.props.data.Day.Icon} />
       </div>
     );
   }
