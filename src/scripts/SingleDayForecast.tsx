@@ -17,11 +17,16 @@ export class SingleDayForecast extends React.Component<
     super(props);
   }
 
-  render() {
+  public render() {
     return (
       <div className='single-day-forecast'>
+        <div className='date'>{this.props.data.Date}</div>
+        <WeatherIcon
+          id={this.props.data.Day.Icon}
+          style={{}}
+          className={'sdf-weather-icon'}
+        />
         <div>{this.props.data.Day.IconPhrase}</div>
-        <WeatherIcon id={this.props.data.Day.Icon} />
       </div>
     );
   }

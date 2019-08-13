@@ -42,13 +42,18 @@ import '../assets/weather-icons/mostly-cloudy-with-t-storms-night.png';
 import '../assets/weather-icons/mostly-cloudy-with-flurries-night.png';
 import '../assets/weather-icons/mostly-cloudy-with-snow-night.png';
 
-export const WeatherIcon = ({ id }: { id: number }) => {
-  const style = {
-    width: '100pxsrc/assets/weather-icons/',
-    height: '200px'
-  };
-  return <img style={style} src={weatherIconIdMap[id]} />;
-  // return <img style={style} src={sunny} />;
+export const WeatherIcon = ({
+  id,
+  className,
+  style
+}: {
+  id: number;
+  className: string;
+  style: any;
+}) => {
+  style = style || { width: '100px', height: '200px' };
+  className = `weather-icon ${className}`;
+  return <img className={className} style={style} src={weatherIconIdMap[id]} />;
 };
 
 const weatherIconIdMap: Record<number, string> = {

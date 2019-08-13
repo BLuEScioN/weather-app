@@ -35,7 +35,6 @@ export class WeatherApp extends React.Component<
       <div className='weather-app'>
         <SearchBar />
         <FiveDayForecast data={this.state.fiveDayForecastData} />
-        <WeatherIcon id={1} />
       </div>
     );
   }

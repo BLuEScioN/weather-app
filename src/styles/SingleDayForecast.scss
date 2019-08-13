@@ -1,2 +1,9 @@
 .single-day-forecast {
+  height: 200px;
+  width: 250px;
+
+  sdf-weather-icon {
+    height: 100px;
+    width: 200px;
+  }
 }
